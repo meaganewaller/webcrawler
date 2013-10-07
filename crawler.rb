@@ -21,9 +21,11 @@ end
 
 
 Page.destroy_all
+Word.destroy_all
 Link.destroy_all
 
-Link.create(:url => "http://chongkim.org/").save!
+Link.create(:url => ARGV[0]).save!
+
 
 def tcpsocket(hostname, port)
   s = Socket.new Socket::AF_INET, Socket::SOCK_STREAM
@@ -45,7 +47,9 @@ Host: #{url.hostname}\r
 end
 
 link_models = Link.where(:visited_at => nil).limit(1)
-while !link_models.empty? 
+count = 0
+while !link_models.empty? && count < 30
+  count += 1
   link_model = link_models[0]
   url = URI(link_model.url)
   puts url.inspect
