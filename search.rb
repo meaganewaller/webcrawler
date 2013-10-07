@@ -20,9 +20,8 @@ word = ARGV[0]
 Word.where(:word => word).order('frequency DESC').limit(10).each do |w|
   page = Page.find(w.page_id)
   puts "------------"
-  puts page.title
-  puts page.url
-  puts page.body[200..300]
+  puts "Title: #{page.title}"
+  puts "URL: #{page.url}"
 end
 
 
