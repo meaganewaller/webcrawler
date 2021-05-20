@@ -33,17 +33,19 @@ GEM
     debugger-ruby_core_source (1.2.3)
     fast-stemmer (1.0.2)
     i18n (0.6.5)
-    mini_portile (0.5.1)
+    mini_portile2 (2.5.1)
     minitest (4.7.5)
     multi_json (1.8.0)
-    nokogiri (1.6.0)
-      mini_portile (~> 0.5.0)
+    nokogiri (1.11.5)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     pismo (0.7.4)
       awesome_print
       chronic
       fast-stemmer
       nokogiri
       sanitize
+    racc (1.5.2)
     robotex (1.0.0)
     sanitize (2.0.6)
       nokogiri (>= 1.4.4)
